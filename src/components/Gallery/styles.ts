@@ -1,8 +1,13 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Items = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+  }
 `
 
 export const Action = styled.div`
@@ -20,7 +25,6 @@ export const Action = styled.div`
 `
 
 export const Item = styled.li`
-  margin-right: 16px;
   position: relative;
 
   > img {
@@ -29,6 +33,11 @@ export const Item = styled.li`
     width: 150px;
     height: 150px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 136px;
+      height: 136px;
+    }
   }
 
   &:hover {
